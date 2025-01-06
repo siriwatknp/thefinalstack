@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Html, Head, Main, NextScript } from 'next/document';
 import { DocumentHeadTags, documentGetInitialProps } from '@mui/material-nextjs/v15-pagesRouter';
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 
 export default function MyDocument(props) {
   return (
@@ -13,6 +14,7 @@ export default function MyDocument(props) {
         <DocumentHeadTags {...props} />
       </Head>
       <body>
+        <InitColorSchemeScript attribute="class" />
         <Main />
         <NextScript />
       </body>
