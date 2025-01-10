@@ -7,13 +7,15 @@ import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 import { Button } from '@mui/material';
 import {useDispatch, useSelector} from "react-redux";
+import { useColorScheme } from "@mui/material/styles";
 
 
 import {userThemeChange} from "../redux/actions/userActions";
 
 export default function Index() {
   const dispatch = useDispatch();
-  const currentTheme = useSelector((state) => state.user.theme);
+  const { mode, setMode } = useColorScheme();
+
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
@@ -22,18 +24,22 @@ export default function Index() {
         </Typography>
 
         <Typography variant="body2" component="h2" sx={{ mb: 2 }}>
-          Current Theme: {currentTheme}
+          Current Theme: {mode}
         </Typography>
         
-        <Button variant="contained" color="primary"
-          onClick={() => dispatch(userThemeChange('light'))}
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setMode("light")}
           sx={{ m: 2 }}
         >
             Light Mode
           </Button>
 
-          <Button variant="contained" color="primary"
-          onClick={() => dispatch(userThemeChange('dark'))}
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setMode("dark")}
           sx={{ m: 2 }}
           >
             Dark Mode

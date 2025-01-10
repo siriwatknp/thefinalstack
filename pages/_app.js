@@ -3,8 +3,7 @@ import Head from 'next/head';
 import { AppCacheProvider } from '@mui/material-nextjs/v15-pagesRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from '../src/theme';
-
+import { theme } from "../src/theme";
 
 import {Provider, useSelector} from "react-redux";
 
@@ -20,7 +19,7 @@ function AppWithProvider(props) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme.getTheme(userTheme || 'light')} defaultMode="light">
+      <ThemeProvider theme={theme} defaultMode="light">
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>

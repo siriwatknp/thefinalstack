@@ -8,6 +8,45 @@ const roboto = Roboto({
   display: 'swap',
 });
 
+export const theme = createTheme({
+  cssVariables: {
+    colorSchemeSelector: "class",
+  },
+  colorSchemes: {
+    light: {
+      palette: {
+        mode: "light",
+        primary: {
+          main: "#556cd6",
+        },
+        secondary: {
+          main: "#19857b",
+        },
+        error: {
+          main: red.A400,
+        },
+      },
+    },
+    dark: {
+      palette: {
+        mode: "dark",
+        primary: {
+          main: "#fff",
+        },
+        secondary: {
+          main: "rgba(233, 30, 99, 1)",
+        },
+        error: {
+          main: red.A400,
+        },
+      },
+    },
+  },
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+  },
+});
+
 // Create a theme instance.
 const light_theme = createTheme({
   cssVariables: true,
